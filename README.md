@@ -48,24 +48,24 @@ Phase 3 (Scale)         → Supply Chain & Procurement
 All use cases are built on the same AWS platform foundation:
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Amazon Bedrock AgentCore                       │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────────┐   │
-│  │ Identity  │  │  Memory  │  │  Tools   │  │ Observability│   │
-│  │& Access   │  │ (Session)│  │(Actions) │  │  & Tracing   │   │
-│  └──────────┘  └──────────┘  └──────────┘  └──────────────┘   │
-├─────────────────────────────────────────────────────────────────┤
-│                      Amazon Bedrock                               │
-│  ┌──────────────┐  ┌────────────┐  ┌────────────────────────┐  │
-│  │ Foundation    │  │ Knowledge  │  │     Guardrails         │  │
-│  │ Models        │  │ Bases (RAG)│  │ (Safety/PII/Grounding) │  │
-│  │ (Multi-model) │  │            │  │                        │  │
-│  └──────────────┘  └────────────┘  └────────────────────────┘  │
-├─────────────────────────────────────────────────────────────────┤
-│          Open Standards: MCP + A2A Protocols                     │
-├─────────────────────────────────────────────────────────────────┤
-│  Frameworks: LangGraph │ CrewAI │ LlamaIndex │ Strands SDK      │
-└─────────────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────────┐
+│                  Amazon Bedrock AgentCore                      │
+│  ┌────────────┐  ┌──────────┐  ┌────────┐  ┌─────────────┐  │
+│  │  Identity   │  │  Memory  │  │ Tools  │  │Observability│  │
+│  │  & Access   │  │(Session) │  │(Actions│  │ & Tracing   │  │
+│  └────────────┘  └──────────┘  └────────┘  └─────────────┘  │
+├───────────────────────────────────────────────────────────────┤
+│                      Amazon Bedrock                            │
+│  ┌─────────────┐  ┌────────────┐  ┌───────────────────────┐  │
+│  │ Foundation   │  │ Knowledge  │  │      Guardrails       │  │
+│  │ Models       │  │ Bases (RAG)│  │(Safety/PII/Grounding) │  │
+│  │(Multi-model) │  │            │  │                       │  │
+│  └─────────────┘  └────────────┘  └───────────────────────┘  │
+├───────────────────────────────────────────────────────────────┤
+│         Open Standards: MCP + A2A Protocols                   │
+├───────────────────────────────────────────────────────────────┤
+│  Frameworks: LangGraph │ CrewAI │ LlamaIndex │ Strands SDK   │
+└───────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -87,6 +87,16 @@ All use cases are built on the same AWS platform foundation:
 | Retail Agent | ReAct framework agent for customer interactions | [aws-samples/agentsforbedrock-retailagent](https://github.com/aws-samples/agentsforbedrock-retailagent) |
 | AI-Powered SDLC | AI across all 6 software development lifecycle phases | [aws-samples/sample-ai-powered-sdlc-patterns-with-aws](https://github.com/aws-samples/sample-ai-powered-sdlc-patterns-with-aws) |
 | Industry Use Cases | Vertical templates (auto, energy, FSI, healthcare, travel) | [aws-samples/amazon-bedrock-industry-use-cases](https://github.com/aws-samples/amazon-bedrock-industry-use-cases) |
+| Kiro | Agentic IDE — spec-driven development, open source | [kirodotdev/Kiro](https://github.com/kirodotdev/Kiro) |
+
+---
+
+## Additional AWS Products (New 2026)
+
+| Product | Description | Link |
+|---------|-------------|------|
+| **Amazon Quick** | AI-powered analytics platform (rebrand of QuickSight + AI assistant, Flows, Research, Index). No AWS account required. | [aws.amazon.com/quick](https://aws.amazon.com/quick/) |
+| **Kiro** | Agentic IDE built by AWS — spec-driven development, Hooks, Steering, Powers, autonomous agent. Replaces Amazon Q Developer. | [kiro.dev](https://kiro.dev) |
 
 ---
 

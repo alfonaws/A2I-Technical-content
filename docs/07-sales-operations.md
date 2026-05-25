@@ -194,6 +194,20 @@ Gartner finds that 72% of organisations save time with AI but do not reinvest it
 | **Amazon OpenSearch** | Semantic search across sales content, past deals, and competitive intelligence |
 | **Amazon EventBridge** | Real-time signal routing: form fills, intent signals, CRM stage changes |
 | **Amazon DynamoDB** | Session state, rep preferences, deal memory across agent interactions |
+| **Amazon Quick** | AI-powered analytics dashboards, pipeline visualization, forecast reporting, workflow automation (Quick Sight + Quick Flows + Quick Research) |
+
+### Amazon Quick for Sales Analytics
+
+[Amazon Quick](https://aws.amazon.com/quick/) (launched April 2026) extends the sales agent architecture with built-in analytics and AI-powered reporting:
+
+| Quick Component | Sales Application |
+|----------------|-------------------|
+| **Quick Sight** | Pipeline dashboards, win/loss analysis, quota tracking visualizations |
+| **Quick Flows** | Automated sales report generation, weekly forecast distribution |
+| **Quick Research** | Deep-dive competitive analysis, market trend summaries across business + public data |
+| **Quick Index** | Cross-source data discovery across CRM, marketing automation, and communication logs |
+
+Quick integrates directly with Salesforce, HubSpot, Slack, Microsoft Teams, and Google Workspace — providing sales leaders with AI-generated insights without requiring custom dashboard development. Available standalone (no AWS account required) or integrated with the Bedrock agent architecture via API.
 
 ### Deployment Timeline
 
@@ -227,6 +241,8 @@ AWS agents connect to Salesforce, HubSpot, Dynamics, or any custom CRM through a
 
 | Resource | Link |
 |----------|------|
+| Amazon Quick — AI Analytics Platform | [aws.amazon.com/quick](https://aws.amazon.com/quick/) |
+| Amazon Quick — Features | [aws.amazon.com/quick/features](https://aws.amazon.com/quick/features/) |
 | Automate Enterprise Workflows: Salesforce Agentforce with Amazon Bedrock Agents | [AWS Machine Learning Blog](https://aws.amazon.com/blogs/machine-learning/automate-enterprise-workflows-by-integrating-salesforce-agentforce-with-amazon-bedrock-agents/) |
 | Guidance for Building Agentic AI-Powered Hyper-Personalized Customer Experience | [AWS Solutions Library](https://docs.aws.amazon.com/solutions/building-agentic-ai-powered-hyper-personalized-customer-experience-on-aws/) |
 | Guidance for Multi-Agent Orchestration on AWS | [AWS Solutions Library](https://docs.aws.amazon.com/solutions/multi-agent-orchestration-on-aws/) |

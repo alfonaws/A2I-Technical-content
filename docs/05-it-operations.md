@@ -205,13 +205,14 @@ This eliminates the **#1 sales objection**: "What if the agent makes errors on p
 | **Amazon Bedrock Agents** | Multi-agent orchestration for triage, remediation, escalation |
 | **Amazon Bedrock AgentCore** | Production runtime with identity, memory, observability |
 | **Amazon Bedrock Knowledge Bases** | Runbook retrieval, resolution history, SOP matching |
-| **Amazon Q Developer** | Code-level debugging and infrastructure analysis |
+| **Kiro** | Code-level debugging, infrastructure analysis, spec-driven remediation scripts |
 | **Amazon CloudWatch** | Native AWS monitoring, metrics, logs, traces |
 | **AWS Systems Manager** | Automated remediation actions (SSM Automation) |
 | **AWS Lambda** | Custom action group execution |
 | **Amazon EventBridge** | Event-driven alert routing and orchestration |
 | **Amazon OpenSearch** | Log analysis and correlation engine |
 | **AWS Step Functions** | Complex multi-step remediation workflows |
+| **Amazon Quick** | Operational dashboards (Quick Sight), automated incident reports (Quick Flows), cross-source alert analytics (Quick Research) |
 
 ### Deployment Timeline
 
@@ -277,7 +278,7 @@ This eliminates the **#1 sales objection**: "What if the agent makes errors on p
 | Native integration | CloudWatch + Systems Manager + EventBridge = zero-friction for AWS workloads |
 | Multi-cloud ready | Agents connect to any monitoring/ITSM via action groups |
 | Progressive deployment | Observer → Advisor → Executor → Autonomous de-risks sales |
-| Amazon Q Developer | Code-level intelligence for complex debugging |
+| Kiro + Amazon Quick | Code-level debugging (Kiro) + operational dashboards and automated reporting (Quick) |
 | Cost model | Pay-per-inference vs $150K+/year for AIOps platform licenses |
 
 ---

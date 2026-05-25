@@ -11,17 +11,19 @@
 Software Development & Code Generation demonstrates **exceptional market validation** and the highest current scaled adoption of any AI use case (24% per McKinsey 2025). It earns bonus status precisely because of this maturity — but that same maturity shifts who delivers the value.
 
 **The core capability is ISV-embedded, not SI-built:**
-- Code completion, test generation, documentation, and security scanning are already delivered through **Amazon Q Developer**, embedded directly in IDEs and CI/CD pipelines
+- Code completion, test generation, documentation, and security scanning are delivered through **Kiro** — AWS's agentic IDE (GA November 2025), built on Code OSS and powered by Claude models
 - AWS Transform handles agentic application modernization for .NET, Java, and mainframe workloads at scale
-- A customer can get immediate, measurable value from Amazon Q Developer in **1-2 weeks** — without a systems integrator
+- A customer can get immediate, measurable value from Kiro in **1-2 weeks** — without a systems integrator
+
+> **Note:** Amazon Q Developer is being retired (new signups blocked May 15, 2026; end of support April 30, 2027). Q Developer Pro customers retain benefits when logging into Kiro with the same credentials. Kiro is the strategic forward path for AI-assisted development on AWS.
 
 **SI opportunity exists — but it is specific and bounded:**
 
 | SI Opportunity | Where the Value Is |
 |---------------|-------------------|
 | **Application modernization at scale** | .NET Windows → Linux, Java upgrades, mainframe migrations, VMware exit — transformation programs too large and complex for off-the-shelf tools alone |
-| **Custom development agent orchestration** | Org-specific coding standards, repo-aware agents, CI/CD pipeline integration using Bedrock Agents and Strands |
-| **Enterprise rollout and adoption** | Onboarding thousands of developers, customizing Amazon Q to internal codebases, governance programs, measuring and reporting productivity gains |
+| **Custom development agent orchestration** | Org-specific coding standards, repo-aware agents, CI/CD pipeline integration using Bedrock Agents, Strands, and Kiro Powers |
+| **Enterprise rollout and adoption** | Onboarding thousands of developers, configuring Kiro Steering files for org standards, governance programs, measuring and reporting productivity gains |
 
 This is why Software Development is **included** (the market opportunity is real and large) but designated **bonus** (the default SI engagement model is adoption and customization, not greenfield build).
 
@@ -68,8 +70,8 @@ This is why Software Development is **included** (the market opportunity is real
 | Cross-industry applicability | ✅ High | Every organization that writes software (universal) |
 | Repeatable component | **55-65%** | Code analysis, suggestion, test generation, security scanning = constant |
 | Quantifiable ROI | ✅ Strong | 20-45% productivity gains, 75% code review efficiency |
-| Time-to-value | **1-2 weeks (Q Developer); 6-12 weeks (custom)** | Q Developer: near-immediate; custom modernization agents: 6-12 weeks |
-| Implementation risk | ✅ Low-Medium | Q Developer is low risk; custom agents for production pipelines require governance |
+| Time-to-value | **1-2 weeks (Kiro); 6-12 weeks (custom agents)** | Kiro: near-immediate; custom modernization agents: 6-12 weeks |
+| Implementation risk | ✅ Low-Medium | Kiro is low risk; custom agents for production pipelines require governance |
 
 ### Repeatability Breakdown
 
@@ -83,8 +85,8 @@ This is why Software Development is **included** (the market opportunity is real
 - Infrastructure-as-code templates for agent deployment
 
 **What you customize (35-45%):**
-- Coding standards and style guides (Q Developer customization)
-- Repository context — private codebase indexing
+- Steering files — org coding standards and architectural decisions
+- Repository context — Hooks for event-driven automation per project
 - CI/CD platform integration (CodePipeline, Jenkins, GitLab, GitHub Actions)
 - Security and compliance policies (e.g., OWASP, SOC2, FedRAMP)
 - Modernization scope and language targets (.NET, Java, COBOL)
@@ -112,8 +114,8 @@ This is why Software Development is **included** (the market opportunity is real
 
 | Deployment Path | Time to Value | SI Engagement |
 |----------------|---------------|---------------|
-| Amazon Q Developer (standard) | **1-2 weeks** | Optional — adoption and enablement |
-| Amazon Q Developer (customized to internal codebase) | **4-8 weeks** | Codebase indexing, customization, governance |
+| Kiro (standard deployment) | **1-2 weeks** | Optional — adoption and enablement |
+| Kiro (customized: Steering + Hooks + Powers) | **4-8 weeks** | Steering files, Hooks automation, governance |
 | Custom development agents (Bedrock + Strands) | **6-12 weeks** | Full SI engagement |
 | Application modernization at scale (AWS Transform) | **Program-dependent** | Full SI engagement — weeks to months |
 
@@ -138,7 +140,7 @@ This is why Software Development is **included** (the market opportunity is real
 | Reduced test authoring effort | $800K |
 | Documentation automation | $400K |
 | **Total annual benefit** | **$13.7M** |
-| Amazon Q Developer (500 devs, Pro tier) | ~$240K/year |
+| Kiro (500 devs, Pro tier @ $20/user/mo) | ~$120K/year |
 | SI customization / adoption program | $300K-$600K |
 | **Payback period** | **< 1 month** |
 
@@ -158,8 +160,8 @@ This is why Software Development is **included** (the market opportunity is real
 │  └─────┬─────┘  └─────┬─────┘  └──────┬──────┘  └────┬─────┘  └────┬────┘ │
 │        │              │                │               │              │       │
 │  ┌─────▼──────────────▼────────────────▼───────────────▼──────────────▼────┐│
-│  │          Amazon Q Developer — Inline IDE + CLI + Code Review              ││
-│  │   Suggestions │ Test Gen │ Doc Gen │ Security Scan │ /transform           ││
+│  │          Kiro — Agentic IDE (Spec-Driven Development)                     ││
+│  │   Specs │ Hooks │ Steering │ Powers │ Autonomous Agent │ CLI              ││
 │  └───────────────────────────────────────────────────────────────────────────┘│
 │                                                                               │
 │  ┌────────────────────────────────────────────────────────────────────────┐  │
@@ -180,49 +182,45 @@ This is why Software Development is **included** (the market opportunity is real
 
 *Source: [sample-ai-powered-sdlc-patterns-with-aws](https://github.com/aws-samples/sample-ai-powered-sdlc-patterns-with-aws)*
 
-### Custom Development Agent Architecture
+### Kiro Architecture — Spec-Driven Agentic IDE
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                      Developer Tooling Layer                          │
-│   IDE (VS Code, JetBrains) │ CLI (Q Developer) │ CI/CD Pipeline     │
+│                           Kiro IDE                                    │
+│   Desktop (macOS/Win/Linux) │ Kiro Web │ CLI │ GitHub Integration    │
 └──────────────────────────────┬──────────────────────────────────────┘
-                               │ Code + Context
+                               │ Code + Specs + Context
 ┌──────────────────────────────▼──────────────────────────────────────┐
-│               Amazon Q Developer (Core Capability)                    │
-│   Code Completion │ Test Gen │ /transform │ Security Scan │ Chat     │
-│   Q Developer Customization (internal codebase indexing)             │
+│                 Kiro Agentic Core (Claude Models)                     │
+│  ┌────────────┐  ┌────────────┐  ┌──────────────┐  ┌────────────┐ │
+│  │   Specs    │  │   Hooks    │  │   Steering   │  │   Powers   │ │
+│  │(Reqs →    │  │(Event-     │  │(.kiro/       │  │(MCP tools +│ │
+│  │ Design →  │  │ driven     │  │ steering/    │  │ domain     │ │
+│  │ Tasks)    │  │ automation)│  │ conventions) │  │ extensions)│ │
+│  └────────────┘  └────────────┘  └──────────────┘  └────────────┘ │
 └──────────────────────────────┬──────────────────────────────────────┘
-                               │ Complex / Custom Tasks
+                               │ Powers / Custom Agents
 ┌──────────────────────────────▼──────────────────────────────────────┐
-│           Custom Development Agent (Bedrock + Strands)               │
-│   ┌────────────────────────────────────────────────────────────┐    │
-│   │              Orchestration Agent (Supervisor)               │    │
-│   └────────────────────────────────────────────────────────────┘    │
+│                   AWS Powers & Integration Layer                      │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐             │
+│  │  Bedrock     │  │    AWS       │  │  DevOps      │             │
+│  │  AgentCore   │  │  Transform   │  │  Agent       │             │
+│  │  Power       │  │  Power       │  │  Power       │             │
+│  └──────────────┘  └──────────────┘  └──────────────┘             │
 │                                                                      │
-│   ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────────────┐  │
-│   │  Code    │  │  Test    │  │ Security │  │ Modernization    │  │
-│   │ Review   │  │ Author   │  │ Scanner  │  │    Agent         │  │
-│   │  Agent   │  │  Agent   │  │  Agent   │  │ (Transform)      │  │
-│   └────┬─────┘  └────┬─────┘  └────┬─────┘  └────────┬─────────┘  │
-└────────┼──────────────┼─────────────┼──────────────────┼────────────┘
-         │              │             │                  │
-┌────────▼──────────────▼─────────────▼──────────────────▼────────────┐
-│                     Data & Integration Layer                           │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────────────┐   │
-│  │  Repo    │  │ Standards│  │  CI/CD   │  │  AWS Transform   │   │
-│  │ (GitHub/ │  │& Policies│  │(CodePipe-│  │  API             │   │
-│  │ CodeCommit│  │  (S3 +  │  │ line,    │  │                  │   │
-│  │  Index)  │  │   KB)    │  │ Jenkins) │  │                  │   │
-│  └──────────┘  └──────────┘  └──────────┘  └──────────────────┘   │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────────────┐  │
+│  │  Repo    │  │ Steering │  │  CI/CD   │  │  AWS Transform   │  │
+│  │ (GitHub) │  │  Files   │  │(CodeBuild│  │  API             │  │
+│  │          │  │(Org std) │  │ Jenkins) │  │                  │  │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────────────┘  │
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
-### Key AWS Services
+### Key AWS Services & Tools
 
 | Service | Role |
 |---------|------|
-| **Amazon Q Developer** | Code completion, test generation, security scanning, `/transform` for upgrades |
+| **Kiro** | Agentic IDE — spec-driven development, hooks, steering, autonomous agent, 76+ Powers |
 | **AWS Transform** | Agentic application modernization at scale (.NET, Java, mainframe, VMware) |
 | **Amazon Bedrock Agents** | Custom development agent orchestration |
 | **Amazon Bedrock AgentCore** | Production runtime for custom agents (identity, memory, observability) |
@@ -237,9 +235,9 @@ This is why Software Development is **included** (the market opportunity is real
 
 | Week | Activity |
 |------|----------|
-| 1-2 | Amazon Q Developer deployment: IDE plugin rollout, initial developer onboarding |
-| 3-4 | Q Developer customization: internal codebase indexing, standards configuration |
-| 5-8 | Custom agent build (if required): CI/CD integration, Bedrock + Strands agent development |
+| 1-2 | Kiro deployment: IDE rollout, Steering files for org coding standards, initial developer onboarding |
+| 3-4 | Kiro customization: Powers configuration, Hooks for CI/CD events, GitHub integration for autonomous agent |
+| 5-8 | Custom agent build (if required): Bedrock + Strands agents, AWS Transform for modernization programs |
 | 9-12 | Enterprise rollout: governance framework, productivity measurement, adoption program |
 
 ---
@@ -250,10 +248,8 @@ This is why Software Development is **included** (the market opportunity is real
 
 | Repository | Description | Link |
 |-----------|-------------|------|
+| **Kiro** | Agentic IDE — open source (TypeScript), built by AWS | [github.com/kirodotdev/Kiro](https://github.com/kirodotdev/Kiro) |
 | **sample-ai-powered-sdlc-patterns-with-aws** | AI across all 6 SDLC phases — requirements through operations | [github.com/aws-samples/sample-ai-powered-sdlc-patterns-with-aws](https://github.com/aws-samples/sample-ai-powered-sdlc-patterns-with-aws) |
-| **amazon-q-developer-cli** | Amazon Q Developer CLI — open source, Rust | [github.com/aws/amazon-q-developer-cli](https://github.com/aws/amazon-q-developer-cli) |
-| **sample-Amazon-Q-Developer-Cookbook** | IaC prompt recipes for Q Developer | [github.com/aws-samples/sample-Amazon-Q-Developer-Cookbook](https://github.com/aws-samples/sample-Amazon-Q-Developer-Cookbook) |
-| **sample-amazon-q-developer-vibe-coded-projects** | Vibe coding examples with Amazon Q Developer | [github.com/aws-samples/sample-amazon-q-developer-vibe-coded-projects](https://github.com/aws-samples/sample-amazon-q-developer-vibe-coded-projects) |
 | **agentcore-samples** | Custom development agent runtime patterns | [github.com/awslabs/agentcore-samples](https://github.com/awslabs/agentcore-samples) |
 | **bedrock-multi-agents-collaboration-workshop** | Multi-agent patterns for complex SDLC orchestration | [github.com/aws-samples/bedrock-multi-agents-collaboration-workshop](https://github.com/aws-samples/bedrock-multi-agents-collaboration-workshop) |
 
@@ -261,19 +257,20 @@ This is why Software Development is **included** (the market opportunity is real
 
 | Resource | Link |
 |----------|------|
-| Amazon Q Developer | [aws.amazon.com/q/developer/](https://aws.amazon.com/q/developer/) |
+| Kiro — Agentic IDE | [kiro.dev](https://kiro.dev) |
+| Kiro Documentation | [kiro.dev/docs](https://kiro.dev/docs/) |
+| Kiro Powers Marketplace | [kiro.dev/powers](https://kiro.dev/powers/) |
+| Kiro Web (Autonomous Agent) | [kiro.dev/web](https://kiro.dev/web/) |
 | AWS Transform | [aws.amazon.com/transform/](https://aws.amazon.com/transform/) |
-| GitLab Duo with Amazon Q (GA) | [AWS What's New](https://aws.amazon.com/about-aws/whats-new/2025/04/gitlab-duo-amazon-q-generally-available/) |
-| Amazon Q Developer on GitHub | [github.com/apps/amazon-q-developer](https://github.com/apps/amazon-q-developer) |
 | Best Practices for Code Generation | [AWS Prescriptive Guidance](https://docs.aws.amazon.com/prescriptive-guidance/latest/best-practices-code-generation/advanced-capabilities.html) |
 
 ### AWS Blogs
 
 | Blog Post | Link |
 |-----------|------|
+| Introducing Kiro — The Agentic IDE | [Kiro Blog](https://kiro.dev/blog/introducing-kiro/) |
+| Kiro General Availability Announcement | [Kiro Blog](https://kiro.dev/blog/general-availability/) |
 | Agentic Application Modernization at Scale with Strands and Transform Custom | [AWS DevOps Blog](https://aws.amazon.com/blogs/devops/use-generative-ai-agents-for-application-modernization-at-scale-with-strands-amazon-transform-custom-and-amazon-bedrock-agentcore/) |
-| Reimagining Software Development with Amazon Q Developer Agent | [AWS Machine Learning Blog](https://aws.amazon.com/blogs/machine-learning/reimagining-software-development-with-the-amazon-q-developer-agent/) |
-| AWS Security Agent — Full Repository Code Scanning (Preview) | [AWS Security Blog](https://aws.amazon.com/blogs/security/aws-security-agent-full-repository-code-scanning-feature-now-available-in-preview/) |
 | Five Ways to Use Kiro and Amazon Q to Strengthen Security Posture | [AWS Security Blog](https://aws.amazon.com/blogs/security/five-ways-to-use-kiro-and-amazon-q-to-strengthen-your-security-posture/) |
 | Agentic Cloud Modernization with AWS MCPs and Kiro | [AWS Migration Blog](https://aws.amazon.com/blogs/migration-and-modernization/agentic-cloud-modernization-accelerating-modernization-with-aws-mcps-and-kiro/) |
 | Smash Tech Debt with AWS Transform | [AWS Migration Blog](https://aws.amazon.com/blogs/migration-and-modernization/smash-tech-debt-with-aws-transform/) |
@@ -313,13 +310,16 @@ This is why Software Development is **included** (the market opportunity is real
 
 | Dimension | AWS Advantage |
 |-----------|---------------|
-| Native AWS integration | Q Developer understands AWS services, CDK, CloudFormation natively |
+| Spec-driven development | Kiro enforces Requirements → Design → Tasks before code — vs. ad-hoc prompting in Cursor/Copilot |
 | Full SDLC coverage | Requirements through operations — not just code completion |
-| Enterprise codebase customization | Q Developer customization indexes private repos for org-specific context |
+| Steering files | Org coding standards encoded once, applied automatically — no repeated prompt engineering |
+| Hooks (event-driven) | Auto-run tests, security scans, doc updates on file save — not manual step |
+| Autonomous agent | Kiro Web: assign GitHub issues, get PRs back — 10 concurrent tasks |
 | Agentic modernization at scale | AWS Transform handles .NET, Java, and mainframe — not just greenfield |
-| Open source CLI | Amazon Q Developer CLI (Rust, open source) — full transparency and extensibility |
-| GitLab + GitHub integration | Q Developer natively embedded in GitLab Duo and GitHub workflows |
-| Security-first | AWS Security Agent: full-repo scanning in the IDE, not just file-level |
+| Powers ecosystem | 76+ domain-specific extensions (Bedrock AgentCore, Lambda, Step Functions, Amplify) — one-click install |
+| Open source | Kiro IDE on GitHub (TypeScript) — full transparency and extensibility |
+| vs. Cursor/Windsurf | Kiro produces specs + code; competitors produce only code with no structured planning |
+| vs. GitHub Copilot | Copilot is assistant-mode; Kiro is agent-mode with autonomous task execution |
 
 ---
 
